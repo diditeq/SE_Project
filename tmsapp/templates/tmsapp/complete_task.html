@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>completed</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body>
+    {% for task in tasks %}
+    <div class="task">
+        <h3>{{ task.name }}</h3>
+        <p>Status: {{ task.is_completed|yesno:"Completed,Incomplete" }}</p>
+        <!-- Form to mark the task as completed or incomplete -->
+        <form action="{% url 'complete_task' task.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">
+                {% if task.is_completed %}
+                    Mark as Incomplete
+                {% else %}
+                    Mark as Completed
+                {% endif %}
+            </button>
+        </form>
+    </div>
+{% endfor %}
+
+
+  </body>
+</html>
