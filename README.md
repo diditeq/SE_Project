@@ -95,5 +95,5 @@ Common Issues
 •	Database connection errors.
 •	Static files not loading.
 
-##This documentation serves as a comprehensive guide for developers to understand, set up, and contribute to the project. Let me know if you need more specific details or sections!
+#This documentation serves as a comprehensive guide for developers to understand, set up, and contribute to the project. Let me know if you need more specific details or sections!
 
